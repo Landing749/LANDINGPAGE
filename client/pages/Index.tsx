@@ -211,6 +211,12 @@ export default function Index() {
                   background-position: center;
                   background-size: cover;
                 }
+                .project-card-3 {
+                  background-image: url('https://cdn.builder.io/api/v1/image/assets%2F298bf2f50e164b0ca93ac514ef30ab82%2Fa6f969eef6a74ed48d0412a8f1e0fbf5') !important;
+                  background-repeat: no-repeat;
+                  background-position: center;
+                  background-size: cover;
+                }
                 .project-card-4 {
                   background-image: url('https://cdn.builder.io/api/v1/image/assets%2F298bf2f50e164b0ca93ac514ef30ab82%2Fff4a5e7dbe434789a87f89fa55a3d9bf') !important;
                   background-repeat: no-repeat;
