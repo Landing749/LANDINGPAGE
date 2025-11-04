@@ -49,14 +49,18 @@ export default function Index() {
     {
       id: 3,
       title: "Grade 7 Physics",
-      description: "A brief description of the project and its impact",
+      description:
+        "This Project Aims To Help Grade 7 Students Further More Understand the Basics Of Physics",
       link: "https://landing749.github.io/PhysicsG7/",
     },
     {
       id: 4,
-      title: "Project Title",
-      description: "A brief description of the project and its impact",
+      title: "Barangay Tanglaw Connect",
+      description:
+        "This Website Was Made To Connect The Learners Of Barangay Tanglaw Together",
       link: "#",
+      mobileImage:
+        "https://cdn.builder.io/api/v1/image/assets%2F298bf2f50e164b0ca93ac514ef30ab82%2Fff4a5e7dbe434789a87f89fa55a3d9bf",
     },
   ];
 
@@ -137,12 +141,24 @@ export default function Index() {
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
               <button className="group relative px-8 py-4 bg-gradient-to-r from-indigo-500 to-purple-600 text-white font-semibold rounded-lg hover:shadow-2xl hover:shadow-purple-500/50 transition-all duration-300 flex items-center gap-2">
-                View My Work
+                <a
+                  href="https://github.com/Landing749"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 cursor-pointer"
+                >
+                  View My Work
+                </a>
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </button>
-              <button className="px-8 py-4 bg-white/10 text-white font-semibold rounded-lg border border-white/20 hover:bg-white/20 transition-all duration-300">
+              <a
+                href="mailto:arhanmeir.obrero@gmail.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-8 py-4 bg-white/10 text-white font-semibold rounded-lg border border-white/20 hover:bg-white/20 transition-all duration-300 block cursor-pointer"
+              >
                 Get in Touch
-              </button>
+              </a>
             </div>
           </div>
 
@@ -191,6 +207,12 @@ export default function Index() {
                 }
                 .project-card-2 {
                   background-image: url('https://cdn.builder.io/api/v1/image/assets%2F298bf2f50e164b0ca93ac514ef30ab82%2F52735cb6e28b4adb922a37b6f4bf436e') !important;
+                  background-repeat: no-repeat;
+                  background-position: center;
+                  background-size: cover;
+                }
+                .project-card-4 {
+                  background-image: url('https://cdn.builder.io/api/v1/image/assets%2F298bf2f50e164b0ca93ac514ef30ab82%2Fff4a5e7dbe434789a87f89fa55a3d9bf') !important;
                   background-repeat: no-repeat;
                   background-position: center;
                   background-size: cover;
@@ -319,6 +341,9 @@ export default function Index() {
                 <span>GitHub</span>
               </a>
             </div>
+            <button className="mt-6 px-6 py-3 bg-black text-white font-semibold rounded-lg hover:bg-slate-900 transition-colors cursor-pointer">
+              Ask Me Any Question
+            </button>
           </div>
         </section>
 
