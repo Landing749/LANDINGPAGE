@@ -203,10 +203,10 @@ export default function Index() {
                   </div>
                   <div className="p-6 space-y-3">
                     <h3 className="text-xl font-bold text-white group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-indigo-400 group-hover:via-purple-400 group-hover:to-pink-400 group-hover:bg-clip-text transition-colors">
-                      <p>{project.title}</p>
+                      {project.title}
                     </h3>
                     <p className="text-slate-400 text-sm">
-                      <p>{project.description}</p>
+                      {project.description}
                     </p>
                     <a
                       href={project.link}
@@ -233,12 +233,10 @@ export default function Index() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
               <div className="space-y-6">
                 <p className="text-lg text-slate-400 leading-relaxed">
-                  <p>
-                    I'm Athan a passionate designer and developer focused on
-                    creating digital experiences that are both beautiful and
-                    functional. With expertise across design, development, and
-                    strategy.
-                  </p>
+                  I'm Athan a passionate designer and developer focused on
+                  creating digital experiences that are both beautiful and
+                  functional. With expertise across design, development, and
+                  strategy.
                 </p>
                 <p className="text-lg text-slate-400 leading-relaxed">
                   When I'm not designing or coding, you'll find me exploring
@@ -258,7 +256,7 @@ export default function Index() {
                     className="rounded-lg bg-white/5 border border-white/10 p-6 text-center hover:bg-white/10 transition-colors"
                   >
                     <div className="text-3xl font-bold bg-gradient-to-r from-indigo-400 to-purple-400 bg-clip-text text-transparent">
-                      <p>{stat.value}</p>
+                      {stat.value}
                     </div>
                     <div className="text-sm text-slate-400 mt-2">
                       {stat.label}
