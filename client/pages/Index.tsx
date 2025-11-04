@@ -27,6 +27,39 @@ export default function Index() {
     }
   }, [mousePosition]);
 
+  const projects = [
+    {
+      id: 1,
+      title: "La Mesa Cafe",
+      description:
+        "A Project Aiming To Experiment On The Possibilities Of Using Firebase As A Database",
+      link: "https://landing749.github.io/Cafe-San-Gregoryo/",
+      mobileImage:
+        "url(https://cdn.builder.io/api/v1/image/assets%2F298bf2f50e164b0ca93ac514ef30ab82%2Faef5b3c7c96e4809a4e91d79b355f751)",
+    },
+    {
+      id: 2,
+      title: "News-AA",
+      description:
+        "A Blog That Consists Of Articles That Were Made By Fellow Students Aiming To Provide Information To Others",
+      link: "https://landing749.github.io/News-AA/",
+      mobileImage:
+        "url(https://cdn.builder.io/api/v1/image/assets%2F298bf2f50e164b0ca93ac514ef30ab82%2F52735cb6e28b4adb922a37b6f4bf436e)",
+    },
+    {
+      id: 3,
+      title: "Grade 7 Physics",
+      description: "A brief description of the project and its impact",
+      link: "https://landing749.github.io/PhysicsG7/",
+    },
+    {
+      id: 4,
+      title: "Project Title",
+      description: "A brief description of the project and its impact",
+      link: "#",
+    },
+  ];
+
   return (
     <div
       ref={containerRef}
@@ -137,27 +170,53 @@ export default function Index() {
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              {[1, 2, 3, 4].map((i) => (
+              {projects.map((project) => (
                 <div
-                  key={i}
+                  key={project.id}
                   className="group relative rounded-xl overflow-hidden bg-white/5 border border-white/10 hover:border-white/30 transition-all duration-300 cursor-pointer"
                 >
-                  <div className="aspect-video bg-gradient-to-br from-indigo-500/20 to-purple-600/20 flex items-center justify-center">
-                    <div className="text-6xl font-bold text-white/10 group-hover:text-white/20 transition-colors">
-                      {i}
+                  <div
+                    className="aspect-video bg-gradient-to-br from-indigo-500/20 to-purple-600/20 flex items-center justify-center"
+                    style={
+                      project.mobileImage
+                        ? {
+                            backgroundImage: `linear-gradient(to right bottom, rgba(99, 102, 241, 0.2), rgba(147, 51, 234, 0.2))`,
+                          }
+                        : undefined
+                    }
+                  >
+                    <style>{`
+                      @media (max-width: 991px) {
+                        .project-${project.id}-image {
+                          background-image: ${project.mobileImage || "none"} !important;
+                          background-repeat: no-repeat !important;
+                          background-position: center !important;
+                          background-size: cover !important;
+                        }
+                      }
+                    `}</style>
+                    <div
+                      className={`text-6xl font-bold text-white/10 group-hover:text-white/20 transition-colors project-${project.id}-image`}
+                    >
+                      {project.id}
                     </div>
                   </div>
                   <div className="p-6 space-y-3">
                     <h3 className="text-xl font-bold text-white group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-indigo-400 group-hover:via-purple-400 group-hover:to-pink-400 group-hover:bg-clip-text transition-colors">
-                      Project Title
+                      <p>{project.title}</p>
                     </h3>
                     <p className="text-slate-400 text-sm">
-                      A brief description of the project and its impact
+                      <p>{project.description}</p>
                     </p>
-                    <div className="flex items-center gap-2 text-indigo-400 group-hover:text-purple-400 transition-colors pt-2">
+                    <a
+                      href={project.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-2 text-indigo-400 group-hover:text-purple-400 transition-colors pt-2 cursor-pointer"
+                    >
                       <span className="text-sm font-semibold">View Project</span>
                       <ExternalLink className="w-4 h-4 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
-                    </div>
+                    </a>
                   </div>
                 </div>
               ))}
@@ -174,9 +233,12 @@ export default function Index() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
               <div className="space-y-6">
                 <p className="text-lg text-slate-400 leading-relaxed">
-                  I'm a passionate designer and developer focused on creating
-                  digital experiences that are both beautiful and functional.
-                  With expertise across design, development, and strategy.
+                  <p>
+                    I'm Athan a passionate designer and developer focused on
+                    creating digital experiences that are both beautiful and
+                    functional. With expertise across design, development, and
+                    strategy.
+                  </p>
                 </p>
                 <p className="text-lg text-slate-400 leading-relaxed">
                   When I'm not designing or coding, you'll find me exploring
@@ -187,16 +249,16 @@ export default function Index() {
               <div className="grid grid-cols-2 gap-4">
                 {[
                   { label: "Projects", value: "25+" },
-                  { label: "Experience", value: "5+ yrs" },
-                  { label: "Clients", value: "50+" },
-                  { label: "Awards", value: "8" },
+                  { label: "Experience", value: "2+ yrs" },
+                  { label: "Clients", value: "20+" },
+                  { label: "Awards", value: "3" },
                 ].map((stat) => (
                   <div
                     key={stat.label}
                     className="rounded-lg bg-white/5 border border-white/10 p-6 text-center hover:bg-white/10 transition-colors"
                   >
                     <div className="text-3xl font-bold bg-gradient-to-r from-indigo-400 to-purple-400 bg-clip-text text-transparent">
-                      {stat.value}
+                      <p>{stat.value}</p>
                     </div>
                     <div className="text-sm text-slate-400 mt-2">
                       {stat.label}
@@ -226,8 +288,10 @@ export default function Index() {
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-6 pt-4">
               <a
-                href="mailto:hello@example.com"
-                className="group flex items-center gap-3 px-6 py-3 text-white hover:text-transparent hover:bg-gradient-to-r hover:from-indigo-400 hover:via-purple-400 hover:to-pink-400 hover:bg-clip-text transition-colors"
+                href="mailto:arhanmeir.obrero@gmail.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group flex items-center gap-3 px-6 py-3 text-white hover:text-transparent hover:bg-gradient-to-r hover:from-indigo-400 hover:via-purple-400 hover:to-pink-400 hover:bg-clip-text transition-colors cursor-pointer"
               >
                 <Mail className="w-5 h-5" />
                 <span>Send me an email</span>
