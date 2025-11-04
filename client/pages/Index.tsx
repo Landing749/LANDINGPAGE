@@ -35,7 +35,7 @@ export default function Index() {
         "A Project Aiming To Experiment On The Possibilities Of Using Firebase As A Database",
       link: "https://landing749.github.io/Cafe-San-Gregoryo/",
       mobileImage:
-        "url(https://cdn.builder.io/api/v1/image/assets%2F298bf2f50e164b0ca93ac514ef30ab82%2Faef5b3c7c96e4809a4e91d79b355f751)",
+        "https://cdn.builder.io/api/v1/image/assets%2F298bf2f50e164b0ca93ac514ef30ab82%2Faef5b3c7c96e4809a4e91d79b355f751",
     },
     {
       id: 2,
@@ -44,7 +44,7 @@ export default function Index() {
         "A Blog That Consists Of Articles That Were Made By Fellow Students Aiming To Provide Information To Others",
       link: "https://landing749.github.io/News-AA/",
       mobileImage:
-        "url(https://cdn.builder.io/api/v1/image/assets%2F298bf2f50e164b0ca93ac514ef30ab82%2F52735cb6e28b4adb922a37b6f4bf436e)",
+        "https://cdn.builder.io/api/v1/image/assets%2F298bf2f50e164b0ca93ac514ef30ab82%2F52735cb6e28b4adb922a37b6f4bf436e",
     },
     {
       id: 3,
@@ -169,6 +169,35 @@ export default function Index() {
               </p>
             </div>
 
+            <style>{`
+              .project-card-1 {
+                background-image: linear-gradient(to right bottom, rgba(99, 102, 241, 0.2), rgba(147, 51, 234, 0.2));
+              }
+              .project-card-2 {
+                background-image: linear-gradient(to right bottom, rgba(99, 102, 241, 0.2), rgba(147, 51, 234, 0.2));
+              }
+              .project-card-3 {
+                background-image: linear-gradient(to right bottom, rgba(99, 102, 241, 0.2), rgba(147, 51, 234, 0.2));
+              }
+              .project-card-4 {
+                background-image: linear-gradient(to right bottom, rgba(99, 102, 241, 0.2), rgba(147, 51, 234, 0.2));
+              }
+              @media (max-width: 991px) {
+                .project-card-1 {
+                  background-image: url('https://cdn.builder.io/api/v1/image/assets%2F298bf2f50e164b0ca93ac514ef30ab82%2Faef5b3c7c96e4809a4e91d79b355f751') !important;
+                  background-repeat: no-repeat;
+                  background-position: center;
+                  background-size: cover;
+                }
+                .project-card-2 {
+                  background-image: url('https://cdn.builder.io/api/v1/image/assets%2F298bf2f50e164b0ca93ac514ef30ab82%2F52735cb6e28b4adb922a37b6f4bf436e') !important;
+                  background-repeat: no-repeat;
+                  background-position: center;
+                  background-size: cover;
+                }
+              }
+            `}</style>
+
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {projects.map((project) => (
                 <div
@@ -176,28 +205,9 @@ export default function Index() {
                   className="group relative rounded-xl overflow-hidden bg-white/5 border border-white/10 hover:border-white/30 transition-all duration-300 cursor-pointer"
                 >
                   <div
-                    className="aspect-video bg-gradient-to-br from-indigo-500/20 to-purple-600/20 flex items-center justify-center"
-                    style={
-                      project.mobileImage
-                        ? {
-                            backgroundImage: `linear-gradient(to right bottom, rgba(99, 102, 241, 0.2), rgba(147, 51, 234, 0.2))`,
-                          }
-                        : undefined
-                    }
+                    className={`project-card-${project.id} aspect-video flex items-center justify-center`}
                   >
-                    <style>{`
-                      @media (max-width: 991px) {
-                        .project-${project.id}-image {
-                          background-image: ${project.mobileImage || "none"} !important;
-                          background-repeat: no-repeat !important;
-                          background-position: center !important;
-                          background-size: cover !important;
-                        }
-                      }
-                    `}</style>
-                    <div
-                      className={`text-6xl font-bold text-white/10 group-hover:text-white/20 transition-colors project-${project.id}-image`}
-                    >
+                    <div className="text-6xl font-bold text-white/10 group-hover:text-white/20 transition-colors">
                       {project.id}
                     </div>
                   </div>
