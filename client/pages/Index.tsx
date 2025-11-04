@@ -252,7 +252,9 @@ export default function Index() {
                       rel="noopener noreferrer"
                       className="flex items-center gap-2 text-indigo-400 group-hover:text-purple-400 transition-colors pt-2 cursor-pointer"
                     >
-                      <span className="text-sm font-semibold">View Project</span>
+                      <span className="text-sm font-semibold">
+                        View Project
+                      </span>
                       <ExternalLink className="w-4 h-4 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
                     </a>
                   </div>
@@ -277,8 +279,8 @@ export default function Index() {
                   strategy.
                 </p>
                 <p className="text-lg text-slate-400 leading-relaxed">
-                  When I'm not designing or coding, you'll find me exploring
-                  new technologies, contributing to open source, or sharing my
+                  When I'm not designing or coding, you'll find me exploring new
+                  technologies, contributing to open source, or sharing my
                   knowledge with the community.
                 </p>
               </div>
